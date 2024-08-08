@@ -41,12 +41,10 @@ export async function fetchLatestInvoices() {
       ORDER BY invoices.date DESC
       LIMIT 5`;
 
-    const latestInvoices = data.rows.map(
-      (invoice: { amount: number }): { amount: string } => ({
-        ...invoice,
-        amount: formatCurrency(invoice.amount),
-      }),
-    );
+    const latestInvoices = data.rows.map(invoice => ({
+      ...invoice,
+      amount: formatCurrency(invoice.amount),
+    }));
     return latestInvoices;
   } catch (error) {
     console.error('Database Error:', error);

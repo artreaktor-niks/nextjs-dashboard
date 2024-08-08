@@ -2,10 +2,10 @@
 
 import React, { useEffect } from 'react';
 
-const ConsoleLog = ({ data }) => {
+const ConsoleLog = ({ data }: any) => {
   useEffect(() => {
     console.log(data);
-  }, []);
+  }, [data]);
 
   return <div></div>;
 };
